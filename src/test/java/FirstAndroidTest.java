@@ -37,7 +37,7 @@ public class FirstAndroidTest {
 
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("platformName", "Android");
-        caps.setCapability("platformVersion", "10");
+        caps.setCapability("platformVersion", "9");
         caps.setCapability("deviceName", "Android Emulator");
         caps.setCapability("app", System.getenv("BITRISE_APK_PATH"));
         driver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"), caps);
