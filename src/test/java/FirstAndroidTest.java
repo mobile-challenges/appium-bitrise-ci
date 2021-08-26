@@ -23,13 +23,14 @@ public class FirstAndroidTest {
     private static final By addPlant = By.id("add_plant");
     private static final By add = By.id("fab");
     Eyes eyes = new Eyes();
+    String batchId   = System.getenv("APPLITOOLS_BATCH_ID");
+    String batchName = null;
 
     @BeforeTest
     public void setUp() throws MalformedURLException {
         String apiKey = System.getenv("APPLITOOLS_API_KEY");
         eyes.setApiKey(apiKey);
-        String batchName = null;
-        String batchId   = System.getenv("APPLITOOLS_BATCH_ID");
+
         BatchInfo batchInfo = new BatchInfo(batchName);
         batchInfo.setId(batchId);
         eyes.setBatch(batchInfo);
@@ -46,7 +47,7 @@ public class FirstAndroidTest {
     @Test
     public void add_plant_test() {
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        eyes.open(driver, "Sunflower", "Add My Plant");
+        eyes.open(driver, "Sunflower",batchId);
         MobileElement plantList = (MobileElement) driver.findElementByAccessibilityId("Plant list");
         MobileElement myGarden = (MobileElement) driver.findElementByAccessibilityId("My garden");
         wait.until(ExpectedConditions.elementToBeClickable(plantList)).click();
