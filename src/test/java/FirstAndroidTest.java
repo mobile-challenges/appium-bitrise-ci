@@ -47,7 +47,7 @@ public class FirstAndroidTest {
     @Test
     public void add_plant_test() {
         WebDriverWait wait = new WebDriverWait(driver, 20);
-        eyes.open(driver, "Sunflower",batchId);
+        eyes.open(driver, "Sunflower","Add My Plant");
         MobileElement plantList = (MobileElement) driver.findElementByAccessibilityId("Plant list");
         MobileElement myGarden = (MobileElement) driver.findElementByAccessibilityId("My garden");
         wait.until(ExpectedConditions.elementToBeClickable(plantList)).click();
