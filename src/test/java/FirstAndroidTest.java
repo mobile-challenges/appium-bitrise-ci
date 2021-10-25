@@ -27,7 +27,7 @@ public class FirstAndroidTest {
         caps.setCapability("automationName", "UiAutomator2");
         caps.setCapability("platformVersion", "9");
         caps.setCapability("deviceName", "Android Emulator");
-        caps.setCapability("app", "app-debug.apk);
+        caps.setCapability("app", "app-debug.apk");
         driver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"), caps);
     }
 
